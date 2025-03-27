@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaaS - IOT - Avalanche Fuji</title>
+    
+    <!-- ethers.js v6.13.5 desde CDNJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            color: #666;
+            font-style: italic;
+        }
+        #result {
+            font-size: 1.2em;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        pre[class*="language-"] {
+            margin: 0;
+            padding: 15px;
+            background: #f5f2f0;
+        }
+        #resultsContainer {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: left;
+        }
+
+    #resultsContainer li {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        color: #333;
+     }
+
+    #resultsContainer li:nth-child(odd) {
+        background-color: #f0f0f0;
+    }
+    #progressIndicator {
+        font-size: 1.2em;
+        color: #555;
+        margin: 20px 0;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+    }
+
+    table th, table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+        background-color: #f1f1f1;
+    }
+    </style>
+</head>
+<body>
+    <h1>Reporte de trabajos realizados en la impresora 3D ⛅️</h1>
+    <p id="status">Estado: Cargando...</p>
+   
+    
+    <div class="controls">
+        <button id="showDataBtn">Mostrar Datos de la Nube</button>
+        <button id="multiplyBtn">Calcular monto a pagar por trabajo</button>
+    </div>
+   
+
+    <p>Valor actual en la nube: <strong id="cloudValue">Cargando...</strong></p>
+   
+    <div class="data-container hidden" id="dataContainer">
+        <h3>Datos almacenados en ThingSpeak:</h3>
+        <pre id="jsonData"></pre>
+    </div>
+    <div id="resultsContainer"></div>
+    
+    <div id="progressIndicator" style="display: none;">
+        <p>Procesando valores... Por favor, espera.</p>
+    </div>
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
