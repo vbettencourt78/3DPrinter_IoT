@@ -4,7 +4,7 @@
 ## Descripción
 Sistema que simula el pago por uso de una impresora 3D usando:
 - **ThingSpeak** para almacenar datos de la impresora 3D.
-- **Chainlink** como puente hacia Avalanche (no implementado en esta).
+- **Chainlink** como puente hacia Avalanche (no implementado en esta version).
 - **Smart Contracts** en Avalanche para calcular costos.
 
 ## Configuración
